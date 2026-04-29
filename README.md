@@ -1,52 +1,91 @@
-# Wheel of Fortune - Promotional Site
+# :ferris_wheel: Wheel of Fortune - Promotional Site
 
-This project is a React application built with Vite, designed as a promotional "Wheel of Fortune" landing page.
+A gamified affiliate landing page built as an interactive prize wheel experience. Players spin the wheel to discover an exclusive casino welcome bonus.
 
-## Features
-- Interactive Spin Wheel with predefined logic.
-- Result Modal with call-to-action.
-- Fully responsive design (Mobile/Desktop).
-- Standard legal pages (Privacy, Terms, About, Contact).
-- React Router for navigation.
+---
+
+## How the Game Works
+
+1. **The Wheel** — The player is presented with a premium, 8-segment prize wheel featuring various rewards like "Credits", "Bonus", and "Jackpots".
+2. **First Spin** — Click the **SPIN NOW** button. The first spin is programmed to land on **FREE SPIN**, building anticipation and giving the player a second chance.
+3. **Second Spin** — The second spin lands on the **2.5K CREDITS** (Jackpot). A celebratory modal appears with sparkles and a gold burst effect.
+4. **Claim** — Once the jackpot is won, a **CLAIM NOW** button appears. Clicking it redirects the player to the partner casino's official offer page to collect their reward.
+
+---
+
+## Tech Stack
+
+| Layer | Technology |
+|---|---|
+| Framework | React 19 + TypeScript |
+| Bundler | Vite 6 |
+| Styling | Tailwind CSS 4 |
+| Routing | React Router v7 |
+| Deployment | Vercel / Netlify |
+
+---
+
+## Run Locally
+
+**Prerequisites:** Node.js v18+
+
+```bash
+# 1. Install dependencies
+npm install
+
+```bash
+# 2. Start the development server
+npm run dev
+```
+
+Open [http://localhost:5173](http://localhost:5173) in your browser (or the port specified by Vite).
+
+### Build for Production
+
+```bash
+npm run build
+```
+
+---
 
 ## Project Structure
-- `/pages`: Contains route components (Home, Privacy, etc.).
-- `/components`: Reusable UI components (Wheel, Modal, Footer, etc.).
-- `constants.ts`: Configuration for prizes, colors, and the **Offer URL**.
 
-## Local Development
+```
+wheel-of-bonus/
+├── components/
+│   ├── FloatingCoins.tsx  # Animated background coins effect
+│   ├── Footer.tsx         # Page footer with legal links and disclaimers
+│   ├── InfoPanel.tsx      # Welcome and informational panel
+│   ├── PageLayout.tsx     # Shared layout wrapper for legal pages
+│   ├── ResultModal.tsx    # Game result and reward claim modal
+│   └── Wheel.tsx          # Main interactive prize wheel component
+├── pages/
+│   ├── Home.tsx           # Main game page with wheel logic & state
+│   ├── About.tsx          # About Us informational page
+│   ├── Contact.tsx        # Contact support/information page
+│   ├── Privacy.tsx        # Privacy Policy documentation
+│   └── Terms.tsx          # Terms of Service documentation
+├── App.tsx                # React Router and routing setup
+├── index.tsx              # React entry point
+├── constants.ts           # Game configuration and prize data
+├── types.ts               # Shared TypeScript interfaces
+└── vite.config.ts         # Vite build and development config
+```
 
-1. **Install Dependencies**
-   ```bash
-   npm install
-   ```
+---
 
-2. **Start Dev Server**
-   ```bash
-   npm run dev
-   ```
-   Open [http://localhost:3000](http://localhost:3000) (or the port shown in terminal).
+## Pages
 
-## How to Deploy
+| Route | Description |
+|---|---|
+| `/` | Main game (Wheel of Bonus) |
+| `/privacy` | Privacy Policy |
+| `/terms` | Terms of Service |
+| `/about` | About Us |
+| `/contact` | Contact page |
 
-### 1. Push to GitHub
-1. Create a new repository on GitHub.
-2. Run the following commands in your project folder:
-   ```bash
-   git remote add origin https://github.com/YOUR_USERNAME/YOUR_REPO_NAME.git
-   git branch -M main
-   git push -u origin main
-   ```
+---
 
-### 2. Deploy to Vercel
-1. Go to [Vercel](https://vercel.com) and log in.
-2. Click **"Add New..."** -> **"Project"**.
-3. Import your GitHub repository.
-4. Vercel will automatically detect **Vite**.
-5. Click **Deploy**.
+## Responsible Gaming
 
-## Updating the Offer Link
-To change the destination of the "Claim Reward" button:
-1. Open `constants.ts`.
-2. Update the `OFFER_URL` variable.
-3. Commit and push your changes. Vercel will automatically redeploy.
+This site is an independent informational portal and not a gambling operator. All users must be **21+**. If you or someone you know has a gambling problem, call **1-800-GAMBLER**.
